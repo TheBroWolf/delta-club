@@ -3,6 +3,7 @@ package org.academiadecodigo.thunderstructs.controllers;
 import org.academiadecodigo.thunderstructs.models.Party;
 import org.academiadecodigo.thunderstructs.models.User;
 import org.academiadecodigo.thunderstructs.services.PartyServiceImp;
+import org.academiadecodigo.thunderstructs.services.UserServiceImp;
 import org.academiadecodigo.thunderstructs.utils.ClubDB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -49,6 +50,5 @@ public class PartyController {
 
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
-
 
 }
