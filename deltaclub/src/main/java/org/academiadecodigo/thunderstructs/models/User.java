@@ -4,6 +4,7 @@ public class User {
 
     private int id;
     private String name;
+    private String password;
     private int balance;
 
     public int getId() {
@@ -31,4 +32,11 @@ public class User {
     }
 
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
