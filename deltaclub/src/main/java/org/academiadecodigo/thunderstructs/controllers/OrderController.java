@@ -17,7 +17,6 @@ import java.util.List;
 public class OrderController {
 
     private UserService userService;
-    private List<Drink> drinks;
 
     @RequestMapping(method = RequestMethod.GET, value = "/order")
     private ResponseEntity<List<Drink>> getDrinkList() {
@@ -38,11 +37,12 @@ public class OrderController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/")
-    private ResponseEntity<?> makeOrder(int userId, List<Drink> order) {
+    private ResponseEntity<?> makeOrder(int userId) {
 
         User user = userService.getUser(userId);
+        List<Drink> orderList = user.getOrder().getDrinks();
 
-        for (Drink drink : order) {
+        for (Drink drink : orderList) {
             user.setBalance(user.getBalance() - drink.getPrice());
         }
 

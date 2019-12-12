@@ -7,6 +7,7 @@ public class User {
     private String name;
     private String password;
     private double balance;
+    private Order order;
 
 
     public int getId() {
@@ -40,5 +41,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 }
