@@ -9,10 +9,16 @@ public enum Drink {
     SHOT(1.5),
     LONG_DRINK(4.5),
     RUM(3),
-    ARTESENAL_BEER(2.5),
+    ARTISAN_BEER(2.5),
     WATER(1);
 
+    private double price;
 
     Drink(double price) {
+        this.price = price;
+    }
+
+    public double getPrice() {
+        return price;
     }
 }

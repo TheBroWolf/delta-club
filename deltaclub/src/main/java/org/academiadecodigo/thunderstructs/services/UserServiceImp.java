@@ -19,18 +19,18 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public boolean deposit(int userID, int amount) {
+    public boolean deposit(int userID, double amount) {
 
         User user = clubDB.getUsers().get(userID - 1);
 
-        int userBalance = user.getBalance();
+        double userBalance = user.getBalance();
         user.setBalance(userBalance + amount);
 
         return true;
     }
 
     @Override
-    public boolean withdraw(int userID, int amount) {
+    public boolean withdraw(int userID, double amount) {
 
         System.out.println("Teste" + userID);
 

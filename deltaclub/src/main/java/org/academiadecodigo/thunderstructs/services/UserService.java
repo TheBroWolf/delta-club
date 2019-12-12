@@ -6,9 +6,9 @@ public interface UserService {
 
     User getUser(int id);
 
-    boolean deposit(int userID, int amount);
+    boolean deposit(int userID, double amount);
 
-    boolean withdraw(int userID, int amount);
+    boolean withdraw(int userID, double amount);
 
 
 }

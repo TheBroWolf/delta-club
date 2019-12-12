@@ -6,7 +6,8 @@ public class User {
     private int id;
     private String name;
     private String password;
-    private int balance;
+    private double balance;
+    private Order order;
 
 
     public int getId() {
@@ -25,11 +26,11 @@ public class User {
         this.name = name;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
@@ -40,5 +41,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 }
