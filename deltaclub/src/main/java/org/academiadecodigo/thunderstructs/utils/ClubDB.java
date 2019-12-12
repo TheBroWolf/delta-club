@@ -46,6 +46,7 @@ public class ClubDB {
        user1.setId(1);
        user1.setName("Nuno");
        user1.setBalance(30);
+       user1.setPassword("nuno1234");
        loginObj1.setId(1);
        loginObj1.setUsername("nuno18");
        loginObj1.setPassword("nuno1234");
@@ -53,6 +54,8 @@ public class ClubDB {
        user2.setId(2);
        user2.setName("Goncalo");
        user2.setBalance(77);
+       user2.setPassword("goncalo1234");
+
        loginObj2.setId(2);
        loginObj2.setUsername("goncFF");
        loginObj2.setPassword("goncalo1234");
@@ -60,6 +63,7 @@ public class ClubDB {
        user3.setId(3);
        user3.setName("Vasco");
        user3.setBalance(20);
+       user3.setPassword("vasco1234");
        loginObj3.setId(3);
        loginObj3.setUsername("broWolf");
        loginObj3.setPassword("vasco1234");
@@ -67,6 +71,7 @@ public class ClubDB {
        user4.setId(4);
        user4.setName("Filipa");
        user4.setBalance(6);
+       user4.setPassword("filipa1234");
        loginObj4.setId(4);
        loginObj4.setUsername("coolFilipa");
        loginObj4.setPassword("filipa1234");
