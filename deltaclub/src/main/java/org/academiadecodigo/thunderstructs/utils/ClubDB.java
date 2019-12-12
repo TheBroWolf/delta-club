@@ -12,9 +12,9 @@ import java.util.List;
 public class ClubDB {
 
     private List<Party> parties;
+
     private List<User> users;
     private List<LoginObj> loginObjList;
-
 
 
    public ClubDB(){
@@ -84,10 +84,6 @@ public class ClubDB {
        parties.add(party1);
    }
 
-    public List<LoginObj> getLoginObjList() {
-        return loginObjList;
-    }
-
     public List<Party> getParties() {
         return parties;
     }
@@ -95,6 +91,12 @@ public class ClubDB {
     public List<User> getUsers() {
         return users;
     }
+
+    public List<LoginObj> getLoginObjList() {
+        return loginObjList;
+    }
+
+
 }
 
 
