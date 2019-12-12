@@ -53,10 +53,4 @@ public class PartyServiceImp implements PartyService{
     }
 
 
-    public static void main(String[] args) {
-
-        ClubDB clubDB = new ClubDB();
-        PartyServiceImp partyServiceImp = new PartyServiceImp();
-
-    }
 }
