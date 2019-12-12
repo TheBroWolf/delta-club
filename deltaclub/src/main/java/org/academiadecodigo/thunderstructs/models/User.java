@@ -2,9 +2,11 @@ package org.academiadecodigo.thunderstructs.models;
 
 public class User {
 
+
     private int id;
     private String name;
     private int balance;
+
 
     public int getId() {
         return id;
