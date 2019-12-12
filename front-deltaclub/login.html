@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loginstyle.css">
+</head>
+
+<body>
+    <div class="bg">
+        <div class="row">
+            <div class="wrapper fadeInDown">
+                <div id="formContent">
+                    <div class="fadeIn first">
+                        <img src="logo.jpg" id="icon" alt="User Icon" />
+                    </div>
+                    <form action="login" method="POST" style="display: none">
+                        <p></p>
+                        <input type="text" id="username" class="fadeIn second" name="username" placeholder="login">
+                        <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+                        <p></p>
+                        <input type="submit" class="fadeIn fourth" value="Log In">
+                    </form>
+                </div>
+                <div id="formContent" class="form2">
+                    <form action="login" method="POST">
+                        <p></p>
+                        <input type="text" id="username" class="fadeIn second" name="username" placeholder="login">
+                        <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+                        <p></p>
+                        <button type="button" class="btn btn-primary fadeIn fourth" value="Log In" id="login">Login</button>
+                        <p></p>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+
+</html>
