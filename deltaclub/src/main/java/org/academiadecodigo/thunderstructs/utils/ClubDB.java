@@ -84,7 +84,17 @@ public class ClubDB {
        parties.add(party1);
    }
 
+    public List<LoginObj> getLoginObjList() {
+        return loginObjList;
+    }
 
+    public List<Party> getParties() {
+        return parties;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
 }
 
 

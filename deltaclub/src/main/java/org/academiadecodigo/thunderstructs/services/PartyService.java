@@ -11,7 +11,7 @@ public class PartyService {
     private ClubDB clubDB;
 
 
-    private UserService userService;
+    private UserServiceImp userService;
 
 
     public void addUser(int id, int partyID){
