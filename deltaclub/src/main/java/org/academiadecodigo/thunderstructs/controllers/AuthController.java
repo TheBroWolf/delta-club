@@ -3,6 +3,8 @@ package org.academiadecodigo.thunderstructs.controllers;
 
 import org.academiadecodigo.thunderstructs.models.User;
 import org.academiadecodigo.thunderstructs.services.AuthService;
+import org.academiadecodigo.thunderstructs.services.AuthServiceImp;
+import org.academiadecodigo.thunderstructs.utils.ClubDB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -54,5 +56,18 @@ public class AuthController {
     @Autowired
     public void setAuthService(AuthService authService) {
         this.authService = authService;
+    }
+
+    public static void main(String[] args) {
+
+        AuthController authController = new AuthController();
+        AuthServiceImp authService = new AuthServiceImp();
+        ClubDB clubDB = new ClubDB();
+
+        authController.setAuthService(authService);
+        authService.setClubDB(clubDB);
+
+        System.out.println(authController.login("Goncalo#1234"));
+
     }
 }

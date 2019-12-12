@@ -37,7 +37,11 @@ public class AuthServiceImp implements AuthService {
 
         List<User> users = clubDB.getUsers();
 
+
         for (User u : users) {
+
+            System.out.println(u.getName());
+            System.out.println(u.getPassword());
 
             if (u.getName().equals(username) && u.getPassword().equals(password)) {
 
