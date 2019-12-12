@@ -16,7 +16,12 @@ public class ClubDB {
     private List<LoginObj> loginObjList;
 
 
+
    public ClubDB(){
+        populate();
+   }
+
+   private void populate(){
        parties = new LinkedList<>();
        users = new LinkedList<>();
        loginObjList = new LinkedList<>();
@@ -75,7 +80,11 @@ public class ClubDB {
        loginObjList.add(loginObj2);
        loginObjList.add(loginObj3);
        loginObjList.add(loginObj4);
+
+       parties.add(party1);
    }
+
+
 }
 
 

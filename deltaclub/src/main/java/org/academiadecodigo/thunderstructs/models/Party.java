@@ -1,5 +1,6 @@
 package org.academiadecodigo.thunderstructs.models;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Party {
@@ -8,6 +9,11 @@ public class Party {
     private int entryPrice;
     private List<User> users;
     private String description;
+
+    public Party () {
+
+        this.users = new LinkedList<>();
+    }
 
     public int getPartyID() {
         return partyID;
