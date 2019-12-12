@@ -36,14 +36,14 @@ public class OrderController {
 
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/")
+    @RequestMapping(method = RequestMethod.POST, value = "/confirmOrder")
     private ResponseEntity<?> makeOrder(int userId) {
 
         User user = userService.getUser(userId);
         List<Drink> orderList = user.getOrder().getDrinks();
 
         for (Drink drink : orderList) {
-            user.setBalance(user.getBalance() - drink.getPrice());
+            userService.withdraw(userId, drink.getPrice());
         }
 
         return new ResponseEntity<>(HttpStatus.OK);
