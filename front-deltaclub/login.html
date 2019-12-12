@@ -11,7 +11,7 @@
 
 <body>
     <div class="bg">
-        <div class="row">
+        <div class="row" id="loginView">
             <div class="col wrapper fadeInDown">
                 <div id="formContent" class="form1">
                     <div class="fadeIn first">
@@ -22,7 +22,8 @@
                         <input type="text" id="username" class="fadeIn third" name="username" placeholder="username">
                         <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
                         <p></p>
-                        <button type="button" class="btn btn-primary fadeIn fourth" id="submitregist">Submit</button>
+                        <button type="button" class="btn btn-success fadeIn fourth" onclick="submitregist()">Submit</button>
+                        <button type="button" class="btn btn-danger fadeIn fourth" onclick="loginshow()">Cancel</button>
                         <p></p>
                     </form>
                 </div>
@@ -32,25 +33,21 @@
                         <input type="text" id="username" class="fadeIn second" name="username" placeholder="login">
                         <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
                         <p></p>
-                        <button type="button" class="btn btn-primary" id="loginbutton">Login</button>
-                        <button type="button" class="btn btn-success" onclick="register()">Register</button>
+                        <button type="button" class="btn btn-primary fadeIn fourth" id="loginbutton1">Login</button>
+                        <button type="button" class="btn btn-success fadeIn fifth" onclick="register()">Register</button>
                         <p></p>
                     </form>
                 </div>
+
             </div>
             <div id="carouselExampleIndicators" class="col carousel slide" data-ride="carousel" style="margin-top:200px; margin-right:300px">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner" style=" width:70%; height: 400px !important;">
+                <div class="carousel-inner" style=" width:800px; height: 400px !important;">
                     <div class="carousel-item active">
                         <img src="logo.jpg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                                <h5></h5>
-                                <p></p>
-                              </div>
+                            <h5></h5>
+                            <p></p>
+                        </div>
                     </div>
                     <div class="carousel-item">
                         <img src="xmas3.jpg" class="d-block w-100" alt="...">
@@ -68,14 +65,42 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-
+        </div>
+        <div class="container" id="mainView" style="display:none">
+            <div id="carouselExampleIndicators" class="col carousel slide" data-ride="carousel" style="margin-bottom: 20px; margin-left:300px">
+                <div class="carousel-inner" style=" width:800px; height: 200px !important;">
+                    <div class="carousel-item active">
+                        <img src="logo.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5></h5>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="xmas3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="xmas-party2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some example text. Some example text.</p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <script src="loginView.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+    </script>
 </body>
 
 </html>

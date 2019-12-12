@@ -1,25 +1,30 @@
 
 $(document).ready(function () {
 
-
+    $("#loginbutton1").click(function(){
+        getMainView();
+      });
 });
 
 
-function show(){
-    $(".registerform").show();
+function loginshow(){
+    $("#registerform").hide(200);
+    $(".form2").show(200);
 }
 
 function register(){
-  $("#loginform").hide();
-  $("#registerform").show();
+  $(".form2").hide(200);
+  $("#registerform").show(200);
 }
 
-function updateInfo(){
+function submitregist(){
 
-  var id = $('#id').val();
-  console.log(id);
+  console.log(JSON.stringify({
+    username:  $('#username').val(),
+    password: $('#password').val()
+    }));
 
-  $.ajax({
+    $.ajax({
       url: 'http://localhost:8080/login',
       type:'POST',
       data: JSON.stringify({
@@ -28,7 +33,21 @@ function updateInfo(){
           }),
       async: true,
       contentType:'application/json',
-      success: window.location.reload(),
+      success: successCallback,
       error: errorCallback
   });
+
+  function successCallback(){
+      loginshow();
+  }
+
+  function errorCallback(){
+      alert("error");
+  }
 }
+
+function getMainView(){
+    $("#loginView").hide();
+  $("#mainView").show();
+}
+
