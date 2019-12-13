@@ -2,12 +2,17 @@ $(document).ready(function () {
 
     $("#loginbutton1").click(function(){
 
+        console.log(JSON.stringify({
+            username:  $('#username').val(),
+            password: $('#password').val()
+            }));
+
         $.ajax({
-            url: 'http://localhost:8080/login/a',
+            url: 'http://192.168.1.108:8080/login/a',
             type:'POST',
             data: JSON.stringify({
-                username:  $('#username').val(),
-                password: $('#password').val()
+                username:$('#username').val(),
+                password:$('#password').val()
                 }),
             async: true,
             contentType:'application/json',
@@ -22,19 +27,21 @@ $(document).ready(function () {
         function errorCallback(){
             alert("Invalid credentials!")
         };
-
       });
 });
 
-
+function logout(){
+    $("#mainCard").hide(400);
+    $("#loginCard").show(400);
+}
 function loginshow(){
-    $("#registerform").hide(200);
-    $("#loginform").show(200);
+    $("#registerform").hide(400);
+    $("#loginform").show(400);
 }
 
 function register(){
-  $("#loginform").hide(200);
-  $("#registerform").show(200);
+  $("#loginform").hide(400);
+  $("#registerform").show(400);
 }
 
 function submitregist(){
@@ -67,6 +74,6 @@ function submitregist(){
 }
 
 function getMainView(){
-    $("#loginView").hide();
-  $("#mainView").show();
+    $("#loginCard").hide(400);
+  $("#mainCard").show(400);
 }

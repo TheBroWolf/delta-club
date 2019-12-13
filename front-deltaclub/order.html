@@ -2,9 +2,20 @@
 <html>
 
 <head>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+    </script>
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="LoginStyle.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="orderView.js"></script>
     <link rel="stylesheet" href="loginstyle.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,7 +26,7 @@
 
         <div class="col-md-10 col-lg-4" id="mainContainer">
 
-            <div class="card" style="background-color: rgba(245, 245, 245, 0.8); height:1400px" id="mainCard">
+            <div class="card" style="background-color: rgba(245, 245, 245, 0.8); height:1400px" id="loginCard">
                 <img src="delmanos-selfie.png" class="card-img-top" alt="..." style=" background-color:black; width:95%; margin-left:20px; margin-top:10px">
 
 
@@ -51,9 +62,9 @@
                     <input type="password" id="password" class="fadeIn third" name="password" placeholder="password"
                         style="width: 95%; line-height: 5; margin-left:20px">
                     <p></p>
-                    <button type="button" class="btn btn-primary fadeIn fourth" style="line-height: 5rem; width:49%;"
+                    <button type="button" class="btn btn-primary fadeIn fourth" style="line-height: 5rem; width:47%; margin-left: 21px"
                         id="loginbutton1">Login</button>
-                    <button type="button" class="btn btn-success fadeIn fourth" style="line-height: 5rem; width:49%;"
+                    <button type="button" class="btn btn-success fadeIn fourth" style="line-height: 5rem; width:47%;"
                         onclick="register()">Register</button>
                     <p></p>
                 </form>
@@ -70,25 +81,42 @@
                         onclick="loginshow()">Cancel</button>
                     <p></p>
                 </form>
-
             </div>
+            <div class="card" style="background-color: rgba(245, 245, 245, 0.8); display: none; height:1400px" id="mainCard">
+                <div class="btn-group" role="group" aria-label="button group with nested dropdown" style="height:100px;">
+                    <button type="button" class="btn btn-warning" style="font-size:300%">VIP</button>
+                </div>
+
+                <div class="card" style="width: 49rem;">
+                    <img class="card-img-top" src="logo.jpg" alt="Card image cap">
+                    <div class="card-body" style="font-size:200%">
+                        <h5 class="card-title" style="font-size:200%">Filipe Almeida</h5>
+                        <p class="card-text">Your current balance:</p>
+                        <p class="card-text">300€</p>
+                        <a href="#" class="btn btn-primary">Your next parties</a>
+                        <p></p>
+                        <table class="table table-striped table-dark" style="display: none" id="">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Party name</th>
+                                    <th scope="col">Party Id</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="btn-group" role="group" aria-label="button group with nested dropdown" style="height:100px; margin-top:400px;">
+                    <button type="button" class="btn btn-primary" style="font-size:300%">See parties</button>
+                    <button type="button" class="btn btn-primary" style="font-size:300%">Orders</button>
+                    <button type="button" class="btn btn-danger" onclick="logout()" style="font-size:300%">Logout</button>
+                </div>
+            </div>
+
         </div>
-
-    </div>
-
-
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-        crossorigin="anonymous"></script>
-    <script src="orderView.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js">
-    </script>
 </body>
 
 </html>

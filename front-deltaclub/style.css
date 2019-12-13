@@ -26,6 +26,14 @@ body,html{
     left: 50%;
     transform: translate(-50%,-50%);
 }
+
+#secondaryContainer{
+    position: absolute;
+    top:10%;
+    left: 50%;
+    transform: translate(-50%,-10%);
+    width: 700px;
+}
 .cBalance::placeholder { 
     color: rgb(24, 122, 24);
   

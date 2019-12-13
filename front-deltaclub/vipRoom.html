@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="vipstyle.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg">
+    <div class="row">
+        <div class="col-md-1 col-lg-4"></div>
+        <div>
+            <img src="delmanos-selfie.png" class="card-img-top" alt="..." style="margin-left:90%">
+        </div>
+        <div class="col-md-10 col-lg-4" id="mainContainer">
+            <div class="card" style="background-color: rgba(245, 245, 245, 0.8);">
+                <p style="text-align: center">By renting the room you have the right to a free bottle!</p>
+                <p style="text-align: center">Pick your poison</p>
+                <form>
+                    <div class="form-group">
+                        <select class="browser-default custom-select" style="width: 100%">
+                            <option selected>Select a room:</option>
+                            <option value="1">Room 1</option>
+                            <option value="2">Room 2</option>
+                            <option value="3">Room 3</option>
+                            <option value="4">Room 4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                            <select class="browser-default custom-select" style="width: 100%">
+                                <option selected>Free bottle (default is Vodka):</option>
+                                <option value="1">Vodka</option>
+                                <option value="2">Whiskey</option>
+                                <option value="3">Rum</option>
+                                <option value="4">Tequila</option>
+                                <option value="4">Beer Barrel</option>
+                            </select>
+                        </div>
+                    <div class="form-group">
+                            <button type="submit" class="btn btn-secondary btn-lg btn-block" style="height:100px" >Reserve</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card" style="background-color: rgba(0, 0, 0, 0.8);">
+                <h2 style="text-align: center">
+                    The room cost will be decreased from your balance
+                </h2>
+            </div>
+            <div>
+                <button type="button" id="goBack" class="btn btn-secondary btn-lg btn-block" style="height:100px">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <script src="vipView.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+    </script>
+</body>
+</html>
