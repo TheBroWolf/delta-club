@@ -1,6 +1,6 @@
 package org.academiadecodigo.thunderstructs.controllers;
 
-
+import java.util.List;
 import org.academiadecodigo.thunderstructs.models.User;
 import org.academiadecodigo.thunderstructs.models.dtos.LoginDTO;
 import org.academiadecodigo.thunderstructs.services.AuthService;
@@ -22,6 +22,7 @@ public class AuthController {
 
 
     private AuthService authService;
+    private ClubDB clubDB;
 
 
     @RequestMapping(method = RequestMethod.POST, value = {"/a"})
@@ -51,7 +52,28 @@ public class AuthController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = {""})
-    public ResponseEntity<?> submitRegistration(@Valid @RequestBody User user, BindingResult bindingResult){ //TODO: configure User properties
+    public ResponseEntity<?> submitRegistration(@RequestBody LoginDTO loginDTO, BindingResult bindingResult){ //TODO: configure User properties
+
+        String username = loginDTO.getUsername();
+        String password = loginDTO.getPassword();
+        List<User> users = clubDB.getUsers();
+        int id = 0;
+
+        for (User u : users) {
+
+            if (u.getId() > id) {
+                id = u.getId();
+            }
+
+        }
+
+        User user = new User();
+
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setId(id);
+
+
 
         boolean status = authService.addRegistration(user);
 
@@ -67,6 +89,11 @@ public class AuthController {
     @Autowired
     public void setAuthService(AuthService authService) {
         this.authService = authService;
+    }
+
+    @Autowired
+    public void setClubDB(ClubDB clubDB) {
+        this.clubDB = clubDB;
     }
 
     public static void main(String[] args) {
