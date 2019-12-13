@@ -20,6 +20,22 @@ public class VipUserServiceImp implements UserService {
     }
 
     @Override
+    public User getUserByName(String username) {
+
+
+        for (User u : clubDB.getUsers()) {
+
+            if (u.getUsername().equals(username)) {
+
+                return u;
+            }
+        }
+
+        return null;
+
+    }
+
+    @Override
     public boolean deposit(int userID, double amount) {
 
         User user = clubDB.getUsers().get(userID - 1);
