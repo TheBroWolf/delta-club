@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="loginstyle.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg">
+    <div class="row">
+        <div class="col-md-1 col-lg-4"></div>
+
+        <div class="col-md-10 col-lg-4" id="mainContainer">
+
+            <div class="card" style="background-color: rgba(245, 245, 245, 0.8); height:1400px" id="mainCard">
+                <div class="btn-group" role="group" aria-label="button group with nested dropdown" style="height:100px;">
+                    <button type="button" class="btn btn-warning" style="font-size:300%">VIP</button>
+                </div>
+
+                <div class="card" style="width: 49rem;">
+                    <img class="card-img-top" src="logo.jpg" alt="Card image cap">
+                    <div class="card-body" style="font-size:200%">
+                        <h5 class="card-title" style="font-size:200%">Filipe Almeida</h5>
+                        <p class="card-text">Your current balance:</p>
+
+                        <a href="#" class="btn btn-primary">Your next parties</a>
+                        <p></p>
+                        <table class="table table-striped table-dark" style="display: none" id="">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Party name</th>
+                                    <th scope="col">Party Id</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="btn-group" role="group" aria-label="button group with nested dropdown" style="height:100px; margin-top:500px;">
+                    <button type="button" class="btn btn-primary" style="font-size:300%">See parties</button>
+                    <button type="button" class="btn btn-primary" style="font-size:300%">Orders</button>
+                    <button type="button" class="btn btn-danger" onclick="logout()" style="font-size:300%">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <script src="orderView.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+    </script>
+</body>
+
+</html>
