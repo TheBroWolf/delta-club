@@ -2,7 +2,28 @@
 $(document).ready(function () {
 
     $("#loginbutton1").click(function(){
-        getMainView();
+
+        $.ajax({
+            url: 'http://localhost:8080/login/a',
+            type:'POST',
+            data: JSON.stringify({
+                username:  $('#username').val(),
+                password: $('#password').val()
+                }),
+            async: true,
+            contentType:'application/json',
+            success: successCallback,
+            error: errorCallback
+        });
+
+        function successCallback(){
+            getMainView();
+        };
+
+        function errorCallback(){
+            alert("Invalid credentials!")
+        };
+
       });
 });
 
