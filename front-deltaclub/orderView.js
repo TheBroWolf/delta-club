@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    var x = document.createElement("VAR");
+    x = 17;
+
     $("#loginbutton1").click(function(){
 
         console.log(JSON.stringify({
@@ -72,6 +75,10 @@ function submitregist(){
       alert("error");
   }
 }
+
+    function purchaseDrink(){
+        alert('Hello');
+    }
 
 function getMainView(){
     $("#loginCard").hide(400);
