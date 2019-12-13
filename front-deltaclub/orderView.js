@@ -23,6 +23,7 @@ $(document).ready(function () {
 
         function errorCallback() {
             alert("Invalid credentials!")
+            register();
         };
     });
 
@@ -32,6 +33,16 @@ $(document).ready(function () {
 function buy(){
     notshowParties(400);
     alert("Purchase Successfull!")
+}
+
+function showOrders(){
+    $("#mainCard").hide(400);
+    $("#OrdersCard").show(400);
+}
+
+function backmain(){
+    $("#OrdersCard").hide(400);
+    $("#mainCard").show(400);
 }
 
 function getuser(element) {
@@ -45,8 +56,8 @@ function getuser(element) {
 
     function successCallback(response) {
         console.log(response);
-        $('#nameofuser').append(response.username);
-        $('#balance').append(response.balance);
+        $('#nameofuser').text(response.username);
+        $('#balance').text(response.balance);
         getMainView();
     }
 
