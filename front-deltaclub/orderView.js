@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     $("#loginbutton1").click(function(){
@@ -30,11 +29,11 @@ $(document).ready(function () {
 
 function loginshow(){
     $("#registerform").hide(200);
-    $(".form2").show(200);
+    $("#loginform").show(200);
 }
 
 function register(){
-  $(".form2").hide(200);
+  $("#loginform").hide(200);
   $("#registerform").show(200);
 }
 
@@ -71,4 +70,3 @@ function getMainView(){
     $("#loginView").hide();
   $("#mainView").show();
 }
-
