@@ -18,6 +18,19 @@ public class UserServiceImp implements UserService{
         return clubDB.getUsers().get(id - 1);
     }
 
+    public User getUserByName (String username) {
+
+        for (User u : clubDB.getUsers()) {
+
+            if (u.getUsername().equals(username)) {
+
+                return u;
+            }
+        }
+
+        return null;
+    }
+
     @Override
     public boolean deposit(int userID, double amount) {
 

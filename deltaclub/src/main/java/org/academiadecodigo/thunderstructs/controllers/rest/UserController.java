@@ -28,6 +28,14 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = {"/{userName}"})
+    public ResponseEntity<User> getUserByName (@PathVariable String userName) {
+
+        User user = userService.getUserByName(userName);
+
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
 
     @Autowired
     public void setUserService(UserServiceImp userService) {
