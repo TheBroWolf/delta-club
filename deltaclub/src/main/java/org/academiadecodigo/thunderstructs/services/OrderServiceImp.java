@@ -28,7 +28,7 @@ public class OrderServiceImp implements OrderService {
     }
 
     @Autowired
-    public void setUserService(UserService userService) {
+    public void setUserService(UserServiceImp userService) {
         this.userService = userService;
     }
 
