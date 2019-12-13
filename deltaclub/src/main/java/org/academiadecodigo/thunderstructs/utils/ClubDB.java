@@ -1,8 +1,6 @@
 package org.academiadecodigo.thunderstructs.utils;
 
-import org.academiadecodigo.thunderstructs.models.LoginObj;
-import org.academiadecodigo.thunderstructs.models.Party;
-import org.academiadecodigo.thunderstructs.models.User;
+import org.academiadecodigo.thunderstructs.models.*;
 import org.springframework.stereotype.Component;
 
 import java.util.LinkedList;
@@ -12,9 +10,9 @@ import java.util.List;
 public class ClubDB {
 
     private List<Party> parties;
-
     private List<User> users;
     private List<LoginObj> loginObjList;
+    private List<VipSpot> vipSpots;
 
 
    public ClubDB(){
@@ -25,16 +23,22 @@ public class ClubDB {
        parties = new LinkedList<>();
        users = new LinkedList<>();
        loginObjList = new LinkedList<>();
+       vipSpots = new LinkedList<>();
 
        User user1 = new User();
        User user2 = new User();
        User user3 = new User();
        User user4 = new User();
+       VipUser vipUser1 = new VipUser();
+       VipUser vipUser2 = new VipUser();
+
 
        LoginObj loginObj1 = new LoginObj();
        LoginObj loginObj2 = new LoginObj();
        LoginObj loginObj3 = new LoginObj();
        LoginObj loginObj4 = new LoginObj();
+       LoginObj loginObj5 = new LoginObj();
+       LoginObj loginObj6 = new LoginObj();
 
        Party party1 = new Party();
        party1.setDescription("The best party ever thrown by the legendary ThunderSTRUCTs!");
@@ -42,6 +46,7 @@ public class ClubDB {
        party1.setPartyID(1);
        party1.getUsers().add(user1);
        party1.getUsers().add(user2);
+       party1.getUsers().add(vipUser1);
 
        user1.setId(1);
        user1.setName("Nuno");
@@ -76,15 +81,36 @@ public class ClubDB {
        loginObj4.setUsername("coolFilipa");
        loginObj4.setPassword("filipa1234");
 
+       vipUser1.setId(5);
+       vipUser1.setName("Luis");
+       vipUser1.setBalance(500);
+       vipUser1.setPassword("luis1234");
+       loginObj5.setId(5);
+       loginObj5.setUsername("luisBoss");
+       loginObj5.setPassword("luis1234");
+
+       vipUser1.setId(6);
+       vipUser1.setName("Francisco");
+       vipUser1.setBalance(899);
+       vipUser1.setPassword("francisco1234");
+       loginObj5.setId(6);
+       loginObj5.setUsername("chico");
+       loginObj5.setPassword("francisco1234");
+
        users.add(user1);
        users.add(user2);
        users.add(user3);
        users.add(user4);
+       users.add(vipUser1);
+       users.add(vipUser2);
 
        loginObjList.add(loginObj1);
        loginObjList.add(loginObj2);
        loginObjList.add(loginObj3);
        loginObjList.add(loginObj4);
+       loginObjList.add(loginObj5);
+       loginObjList.add(loginObj6);
+
 
        parties.add(party1);
    }
@@ -101,7 +127,9 @@ public class ClubDB {
         return loginObjList;
     }
 
-
+    public List<VipSpot> getVipSpots() {
+        return vipSpots;
+    }
 }
 
 

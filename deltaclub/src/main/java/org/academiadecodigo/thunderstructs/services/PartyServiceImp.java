@@ -48,7 +48,7 @@ public class PartyServiceImp implements PartyService{
     }
 
     @Autowired
-    public void setUserService(UserService userService) {
+    public void setUserService(UserServiceImp userService) {
         this.userService = userService;
     }
 

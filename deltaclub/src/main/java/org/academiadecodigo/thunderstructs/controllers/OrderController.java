@@ -3,6 +3,7 @@ package org.academiadecodigo.thunderstructs.controllers;
 import org.academiadecodigo.thunderstructs.models.Drink;
 import org.academiadecodigo.thunderstructs.models.User;
 import org.academiadecodigo.thunderstructs.services.UserService;
+import org.academiadecodigo.thunderstructs.services.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -55,7 +56,7 @@ public class OrderController {
     }
 
     @Autowired
-    public void setUserService(UserService userService) {
+    public void setUserService(UserServiceImp userService) {
         this.userService = userService;
     }
 }
