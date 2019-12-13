@@ -84,7 +84,7 @@
                 </form>
             </div>
             <div class="card" style="background-color: rgba(245, 245, 245, 0.8); display: none; height:1400px" id="mainCard">
-                <button type="button" class="btn btn-warning" style="font-size:300%;">VIP</button>
+                <button type="button" class="btn btn-warning" onclick="showMVP()" style="font-size:300%;">VIP</button>
 
                 <div class="card" style="width: 49rem;">
                     <img class="card-img-top" src="logo.jpg" alt="Card image cap">
@@ -104,9 +104,10 @@
                     </div>
                 </div>
 
-                <div class="btn-group" role="group" aria-label="button group with nested dropdown" style="height:100px; margin-top:295px; position: relative;">
-                    <button type="button" class="btn btn-primary" onclick="showParties()" style="font-size:300%">See parties</button>
-                    <button type="button" class="btn btn-primary" onclick="showOrders()"; style="font-size:300%">Orders</button>
+                <div class="btn-group" id="peu" role="group" aria-label="button group with nested dropdown" style="height:100px; margin-top:295px; position: relative;">
+                    <button type="button" class="btn btn-primary" onclick="showParties()" style="font-size:300%">See
+                        parties</button>
+                    <button type="button" class="btn btn-primary" onclick="showOrders()" ; style="font-size:300%">Orders</button>
                     <button type="button" class="btn btn-danger" onclick="logout()" style="font-size:300%">Logout</button>
                 </div>
             </div>
@@ -139,72 +140,121 @@
                 <div>
                     <table class="table">
                         <thead>
-                        <tr>
-                            <th scope="col">#Party</th>
-                            <th scope="col">      </th>
-                        </tr>
+                            <tr>
+                                <th scope="col">#Party</th>
+                                <th scope="col"> </th>
+                            </tr>
                         <tbody>
                             <tr>
                                 <th scope="row" style="text-align: center">Halloween</th>
-                                <td><button type="button" id="buy1" onclick="buy()" class="btn btn-warning btn-lg btn-block" style="height: 100px">Buy entry</button></td>
+                                <td><button type="button" id="buy1" onclick="buy()" class="btn btn-warning btn-lg btn-block"
+                                        style="height: 100px">Buy entry</button></td>
                             </tr>
                             <tr>
                                 <th scope="row" style="text-align: center">Christmas</th>
-                                <td><button type="button" id="buy2" class="btn btn-warning btn-lg btn-block" style="height: 100px">Buy entry</button></td>
+                                <td><button type="button" id="buy2" class="btn btn-warning btn-lg btn-block" style="height: 100px">Buy
+                                        entry</button></td>
                             </tr>
                             <tr>
                                 <th scope="row" style="text-align: center">Carnival</th>
-                                <td><button type="button" id="buy3" class="btn btn-warning btn-lg btn-block" style="height: 100px">Buy entry</button></td>
+                                <td><button type="button" id="buy3" class="btn btn-warning btn-lg btn-block" style="height: 100px">Buy
+                                        entry</button></td>
                             </tr>
                         </tbody>
-                    </thead>
+                        </thead>
                     </table>
                 </div>
                 <div>
-                        <button type="button" id="goBack" onclick ="notshowParties()" class="btn btn-danger btn-lg btn-block" style="height: 100px">Cancel</button>
-                    </div>
+                    <button type="button" id="goBack" onclick="notshowParties()" class="btn btn-danger btn-lg btn-block"
+                        style="height: 100px">Cancel</button>
                 </div>
-                <div class="card" style="background-color: rgba(245, 245, 245, 0.8); height:1400px; margin-right: 40px; display: none" id="OrdersCard">
-                    <div style="height: 50%">
-                        <input type="text" class="form-control cBalance" placeholder="Current Balance: 17€" style="border-radius: 10px ;height: 100px; width: 90%; font-size: 300%; margin-left:40px; margin-top:55px;">
-                    </div>
-                    <div class="row" style="margin-top: 350px">
-                        <button type="button" class="btn btn-secondary" style="font-size: 300%; background-color:rgb(98, 26, 107); width: 47%; margin-left: 25px">-</button>
-                        <button type="button" class="btn btn-secondary" style="font-size: 300%; background-color:rgb(43, 30, 100); width: 47% ">+</button>
-                    </div>
-                    <div style="height:200rem; margin-right:9px; margin-left: 9px; margin-top: 10px">
-                        <select id="inputState" class="form-control" style="height: 14%; font-size: 200%; margin-top: 10px">
-                            <option selected style="font-size: 30%;">Drinks List</option>
-                            <option style="font-size: 30%">Vodka - 3€</option>
-                            <option style="font-size: 30%">Whiskey - 4€</option>
-                            <option style="font-size: 30%">Beer - 1€</option>
-                            <option style="font-size: 30%">Mojito - 3€</option>
-                            <option style="font-size: 30%">5 ThunderShots - 5€ </option>
+            </div>
+            <div class="card" style="background-color: rgba(245, 245, 245, 0.8); height:1400px; margin-right: 40px; display: none"
+                id="OrdersCard">
+                <div style="height: 50%">
+                    <input type="text" class="form-control cBalance" placeholder="Current Balance: 17€" style="border-radius: 10px ;height: 100px; width: 90%; font-size: 300%; margin-left:40px; margin-top:55px;">
+                </div>
+                <div class="row" style="margin-top: 350px">
+                    <button type="button" class="btn btn-secondary" style="font-size: 300%; background-color:rgb(98, 26, 107); width: 47%; margin-left: 25px">-</button>
+                    <button type="button" class="btn btn-secondary" style="font-size: 300%; background-color:rgb(43, 30, 100); width: 47% ">+</button>
+                </div>
+                <div style="height:200rem; margin-right:9px; margin-left: 9px; margin-top: 10px">
+                    <select id="inputState" class="form-control" style="height: 14%; font-size: 200%; margin-top: 10px">
+                        <option selected style="font-size: 30%;">Drinks List</option>
+                        <option style="font-size: 30%">Vodka - 3€</option>
+                        <option style="font-size: 30%">Whiskey - 4€</option>
+                        <option style="font-size: 30%">Beer - 1€</option>
+                        <option style="font-size: 30%">Mojito - 3€</option>
+                        <option style="font-size: 30%">5 ThunderShots - 5€ </option>
+                    </select>
+                </div>
+                <div style="align-content: center; margin-left:16%; margin-bottom: 100px">
+                    <button type="button" class="btn btn-success fadeIn fourth" style="line-height: 5rem; width: 40%; font-size: 45px"
+                        onclick="purchaseDrink()">Purchase</button>
+                    <button type="button" class="btn btn-danger fadeIn fourth" style="line-height: 5rem; width: 40%; font-size: 45px"
+                        onclick="backmain()">Cancel</button>
+                </div>
+                <div style="font-size: 300%; height: 25%;">
+                    <form>
+                        <div class="row" style="align-items:center; margin-left: 40px; margin-bottom: 100px;">
+                            <input type="text" class="form-control" placeholder="Order Price" style="height: 100px; width: 45%; font-size: 90%">
+                            <input type="text" class="form-control" placeholder="Final Balance" style="height: 100px; width: 45%; font-size: 90%">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card" style="background-color: rgba(245, 245, 245, 0.8); display: none; height: 800px; " id="vipcard">
+                <p style="text-align: center">By renting the room you have the right to a free bottle!</p>
+                <p style="text-align: center">Pick your poison</p>
+                <form>
+                    <div class="form-group">
+                        <select class="browser-default custom-select" style="width: 100%">
+                            <option selected>Select a room:</option>
+                            <option value="1">Room 1</option>
+                            <option value="2">Room 2</option>
+                            <option value="3">Room 3</option>
+                            <option value="4">Room 4</option>
                         </select>
                     </div>
-                    <div style="align-content: center; margin-left:16%; margin-bottom: 100px">
-                            <button type="button" class="btn btn-success fadeIn fourth" style="line-height: 5rem; width: 40%; font-size: 45px"
-                            onclick="purchaseDrink()">Purchase</button>
-                            <button type="button" class="btn btn-danger fadeIn fourth" style="line-height: 5rem; width: 40%; font-size: 45px"
-                            onclick="backmain()">Cancel</button>
+                    <div class="form-group">
+                        <select class="browser-default custom-select" style="width: 100%">
+                            <option selected>Free bottle (default is Vodka):</option>
+                            <option value="1">Vodka</option>
+                            <option value="2">Whiskey</option>
+                            <option value="3">Rum</option>
+                            <option value="4">Tequila</option>
+                            <option value="4">Beer Barrel</option>
+                        </select>
                     </div>
-                    <div style="font-size: 300%; height: 25%;">
-                        <form>
-                            <div class="row" style="align-items:center; margin-left: 40px; margin-bottom: 100px;">
-                                    <input type="text" class="form-control" placeholder="Order Price" style="height: 100px; width: 45%; font-size: 90%">
-                                    <input type="text" class="form-control" placeholder="Final Balance" style="height: 100px; width: 45%; font-size: 90%">
-                            </div>
-                        </form>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-secondary btn-lg btn-block">Reserve</button>
                     </div>
-                    <div class="row">
+                </form>
+                <p></p>
+                <div class="card" style="background-color: rgba(0, 0, 0, 0.8);">
+                    <h2 style="text-align: center">
+                        The room cost will be decreased from your balance
+                    </h2>
+                </div>
+                <div>
+                    <button type="button" id="goBack" onclick="" class="btn btn-warning btn-lg btn-block" style>Cancel</button>
+                </div>
+            </div>
+            <div class="card" style="background-color: rgba(245, 245, 245, 0.8); height:1400px; margin-right: 40px; display: none;" id="QRCard">
+                    <img src="qr-code.png" alt="..."  height="300" width="300" style="position: absolute; margin-top:50%; margin-left:30%">
+                <div class="row">
+                    <div>
+                            <button type="button" class="btn btn-danger fadeIn btn-secondary btn-lg btn-block" style="line-height: 5rem; width: 100%; font-size: 45px; margin-left: 210px; margin-top: 1000px"
+                            onclick="backMain()">Back</button>
                     </div>
                 </div>
             </div>
-            </div>
-            
-
-
         </div>
+    </div>
+
+
+
+    </div>
     </div>
 </body>
 

@@ -30,6 +30,14 @@ $(document).ready(function () {
 
 });
 
+function backMain(){
+    $("#QRCard").hide(400);
+    $("#mainCard").show(400);
+}
+function purchaseDrink(){
+    $("#OrdersCard").hide(400);
+    $("#QRCard").show(400);
+}
 function buy(){
     notshowParties(400);
     alert("Purchase Successfull!")
@@ -43,6 +51,11 @@ function showOrders(){
 function backmain(){
     $("#OrdersCard").hide(400);
     $("#mainCard").show(400);
+}
+
+function showMVP(){
+    $("#mainCard").hide(400);
+    $("#vipcard").show(400);
 }
 
 function getuser(element) {
