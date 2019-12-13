@@ -60,11 +60,11 @@ public class OrderController {
                 userService.withdraw(userId, drink.getPrice());
             }
 
-            return new ResponseEntity<>(HttpStatus.OK);
 
         }catch (EmptyOrderException ex){
             System.out.println("User order is empty");
         }
+            return new ResponseEntity<>(HttpStatus.OK);
     }
 
     public UserService getUserService() {
