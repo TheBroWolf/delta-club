@@ -6,6 +6,7 @@ import org.academiadecodigo.thunderstructs.models.User;
 import org.academiadecodigo.thunderstructs.services.UserService;
 import org.academiadecodigo.thunderstructs.services.UserServiceImp;
 import org.academiadecodigo.thunderstructs.utils.ClubDB;
+import org.academiadecodigo.thunderstructs.utils.errors.EmptyOrderException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,14 +48,23 @@ public class OrderController {
         if (user == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        List<Drink> orderList = user.getOrder().getDrinks();
 
-        for (Drink drink : orderList) {
-            userService.withdraw(userId, drink.getPrice());
+        try {
+            List<Drink> orderList = user.getOrder().getDrinks();
+
+            if(user.getOrder() == null){
+                throw new EmptyOrderException();
+            }
+
+            for (Drink drink : orderList) {
+                userService.withdraw(userId, drink.getPrice());
+            }
+
+            return new ResponseEntity<>(HttpStatus.OK);
+
+        }catch (EmptyOrderException ex){
+            System.out.println("User order is empty");
         }
-
-        return new ResponseEntity<>(HttpStatus.OK);
-
     }
 
     public UserService getUserService() {
