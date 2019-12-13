@@ -1,8 +1,12 @@
 package org.academiadecodigo.thunderstructs.controllers;
 
 import org.academiadecodigo.thunderstructs.models.Drink;
+import org.academiadecodigo.thunderstructs.models.Order;
 import org.academiadecodigo.thunderstructs.models.User;
 import org.academiadecodigo.thunderstructs.services.UserService;
+import org.academiadecodigo.thunderstructs.services.UserServiceImp;
+import org.academiadecodigo.thunderstructs.utils.ClubDB;
+import org.academiadecodigo.thunderstructs.utils.errors.EmptyOrderException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,14 +44,27 @@ public class OrderController {
     private ResponseEntity<?> makeOrder(int userId) {
 
         User user = userService.getUser(userId);
-        List<Drink> orderList = user.getOrder().getDrinks();
 
-        for (Drink drink : orderList) {
-            userService.withdraw(userId, drink.getPrice());
+        if (user == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        try {
+            List<Drink> orderList = user.getOrder().getDrinks();
 
+            if(user.getOrder() == null){
+                throw new EmptyOrderException();
+            }
+
+            for (Drink drink : orderList) {
+                userService.withdraw(userId, drink.getPrice());
+            }
+
+
+        }catch (EmptyOrderException ex){
+            System.out.println("User order is empty");
+        }
+            return new ResponseEntity<>(HttpStatus.OK);
     }
 
     public UserService getUserService() {
@@ -55,7 +72,7 @@ public class OrderController {
     }
 
     @Autowired
-    public void setUserService(UserService userService) {
+    public void setUserService(UserServiceImp userService) {
         this.userService = userService;
     }
 }
