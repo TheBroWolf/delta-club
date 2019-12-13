@@ -2,10 +2,7 @@ $(document).ready(function () {
 
     $("#loginbutton1").click(function(){
 
-        console.log(JSON.stringify({
-            username:  $('#username').val(),
-            password: $('#password').val()
-            }));
+      var name = $('#username').val();
 
         $.ajax({
             url: 'http://192.168.1.108:8080/login/a',
@@ -16,12 +13,12 @@ $(document).ready(function () {
                 }),
             async: true,
             contentType:'application/json',
-            success: successCallback,
+            success: successCallback(name),
             error: errorCallback
         });
 
-        function successCallback(){
-            getMainView();
+        function successCallback(element){
+            getuser(element);
         };
 
         function errorCallback(){
@@ -29,6 +26,28 @@ $(document).ready(function () {
         };
       });
 });
+
+
+function getuser(element){
+    $.ajax({
+        url: 'http://192.168.1.108:8080/user/this/'+ element,
+        type:"GET",
+        async: true,
+        success: successCallback,
+        error: errorCallback
+    });
+
+    function successCallback(response){
+        console.log(response);
+        $('#nameofuser').append(response.username);
+        $('#balance').append(response.balance);
+        getMainView();
+    }
+
+    function errorCallback(){
+        alert("something went wrong");
+    }
+}
 
 function logout(){
     $("#mainCard").hide(400);
@@ -47,16 +66,16 @@ function register(){
 function submitregist(){
 
   console.log(JSON.stringify({
-    username:  $('#username').val(),
-    password: $('#password').val()
+    username:$('#registusername').val(),
+    password:$('#registpassword').val()
     }));
 
     $.ajax({
-      url: 'http://localhost:8080/login',
+      url: 'http://192.168.1.108:8080/login',   
       type:'POST',
       data: JSON.stringify({
-          username:  $('#username').val(),
-          password: $('#password').val()
+          username:$('#registusername').val(),
+          password:$('#registpassword').val()
           }),
       async: true,
       contentType:'application/json',
