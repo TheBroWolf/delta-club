@@ -20,15 +20,6 @@ public class PartyController {
     private ClubDB clubDB;
     private PartyServiceImp partyService;
 
-    @Autowired
-    public void setPartyService(PartyServiceImp partyService) {
-        this.partyService = partyService;
-    }
-
-    @Autowired
-    public void setClubDB(ClubDB clubDB) {
-        this.clubDB = clubDB;
-    }
 
     @RequestMapping(method = RequestMethod.GET, path = "/parties")
     public ResponseEntity<List<Party>> showParties() {
@@ -51,4 +42,13 @@ public class PartyController {
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
+    @Autowired
+    public void setPartyService(PartyServiceImp partyService) {
+        this.partyService = partyService;
+    }
+
+    @Autowired
+    public void setClubDB(ClubDB clubDB) {
+        this.clubDB = clubDB;
+    }
 }

@@ -25,6 +25,13 @@ public class ClubDB {
        loginObjList = new LinkedList<>();
        vipSpots = new LinkedList<>();
 
+       List<Drink> drinks = new LinkedList<>();
+       drinks.add(Drink.VODKA);
+       drinks.add(Drink.SHOT);
+
+       Order order = new Order();
+       order.setDrinks(drinks);
+
        User user1 = new User();
        User user2 = new User();
        User user3 = new User();
@@ -52,6 +59,7 @@ public class ClubDB {
        user1.setName("Nuno");
        user1.setBalance(30);
        user1.setPassword("nuno1234");
+       user1.setOrder(order);
        loginObj1.setId(1);
        loginObj1.setUsername("nuno18");
        loginObj1.setPassword("nuno1234");
@@ -77,6 +85,7 @@ public class ClubDB {
        user4.setName("Filipa");
        user4.setBalance(6);
        user4.setPassword("filipa1234");
+       user4.setOrder(order);
        loginObj4.setId(4);
        loginObj4.setUsername("coolFilipa");
        loginObj4.setPassword("filipa1234");

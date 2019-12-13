@@ -1,9 +1,11 @@
 package org.academiadecodigo.thunderstructs.controllers;
 
 import org.academiadecodigo.thunderstructs.models.Drink;
+import org.academiadecodigo.thunderstructs.models.Order;
 import org.academiadecodigo.thunderstructs.models.User;
 import org.academiadecodigo.thunderstructs.services.UserService;
 import org.academiadecodigo.thunderstructs.services.UserServiceImp;
+import org.academiadecodigo.thunderstructs.utils.ClubDB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,6 +43,10 @@ public class OrderController {
     private ResponseEntity<?> makeOrder(int userId) {
 
         User user = userService.getUser(userId);
+
+        if (user == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         List<Drink> orderList = user.getOrder().getDrinks();
 
         for (Drink drink : orderList) {
