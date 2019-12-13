@@ -63,7 +63,7 @@ public class UserServiceImp implements UserService{
 
         User user = clubDB.getUsers().get(1);
 
-        System.out.println("Teste1: " + userServiceImp.getUser(1).getName());
+        System.out.println("Teste1: " + userServiceImp.getUser(1).getUsername());
 
         System.out.println("User balance: " + user.getBalance());
         System.out.println("Withdraw 80 with Balance 77: " + userServiceImp.withdraw(user.getId() , 80));

@@ -17,12 +17,12 @@ public class AuthServiceImp implements AuthService {
 
     public boolean addRegistration(User user) {
 
-        String username = user.getName();
+        String username = user.getUsername();
         List<User> users = clubDB.getUsers();
 
         for(User u : users){
 
-            if(u.getName().equals(username)){
+            if(u.getUsername().equals(username)){
 
                 return false;
             }
@@ -40,10 +40,10 @@ public class AuthServiceImp implements AuthService {
 
         for (User u : users) {
 
-            System.out.println(u.getName());
+            System.out.println(u.getUsername());
             System.out.println(u.getPassword());
 
-            if (u.getName().equals(username) && u.getPassword().equals(password)) {
+            if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
 
                 return true;
             }

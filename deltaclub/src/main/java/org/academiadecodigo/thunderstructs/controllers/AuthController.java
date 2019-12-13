@@ -2,6 +2,7 @@ package org.academiadecodigo.thunderstructs.controllers;
 
 
 import org.academiadecodigo.thunderstructs.models.User;
+import org.academiadecodigo.thunderstructs.models.dtos.LoginDTO;
 import org.academiadecodigo.thunderstructs.services.AuthService;
 import org.academiadecodigo.thunderstructs.services.AuthServiceImp;
 import org.academiadecodigo.thunderstructs.utils.ClubDB;
@@ -24,15 +25,27 @@ public class AuthController {
 
 
     @RequestMapping(method = RequestMethod.POST, value = {"/a"})
-    public ResponseEntity<?> login(String userAndPass) {
+    public ResponseEntity<?> login(@RequestBody LoginDTO loginDTO, BindingResult bindingResult) {
 
-        String[] usernameAndPassword = userAndPass.split("#");
+        System.out.println(loginDTO.getPassword());
+        System.out.println(loginDTO.getUsername());
+        System.out.println("LoginDTO Object: " + loginDTO);
+
+        String name = loginDTO.getUsername();
+        String password = loginDTO.getPassword();
+
+        if (authService.authenticate(name, password)) {
+
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+
+/*        String[] usernameAndPassword = userAndPass.split("#");
 
         if (authService.authenticate(usernameAndPassword[0], usernameAndPassword[1])) {
 
             return new ResponseEntity<>(HttpStatus.OK);
 
-        }
+        }*/
 
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
@@ -65,7 +78,7 @@ public class AuthController {
         authController.setAuthService(authService);
         authService.setClubDB(clubDB);
 
-        System.out.println(authController.login("Goncalo#1234"));
+
 
     }
 }

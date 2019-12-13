@@ -75,7 +75,7 @@ public class ClubDB {
         party1.getUsers().add(vipUser1);
 
         user1.setId(1);
-        user1.setName("Nuno");
+        user1.setUsername("Nuno");
         user1.setBalance(30);
         user1.setPassword("nuno1234");
         user1.setOrder(order1);
@@ -84,7 +84,7 @@ public class ClubDB {
         loginObj1.setPassword("nuno1234");
 
         user2.setId(2);
-        user2.setName("Goncalo");
+        user2.setUsername("Goncalo");
         user2.setBalance(77);
         user2.setPassword("goncalo1234");
         user2.setOrder(order2);
@@ -93,7 +93,7 @@ public class ClubDB {
         loginObj2.setPassword("goncalo1234");
 
         user3.setId(3);
-        user3.setName("Vasco");
+        user3.setUsername("Vasco");
         user3.setBalance(20);
         user3.setPassword("vasco1234");
         user3.setOrder(order1);
@@ -102,7 +102,7 @@ public class ClubDB {
         loginObj3.setPassword("vasco1234");
 
         user4.setId(4);
-        user4.setName("Filipa");
+        user4.setUsername("Filipa");
         user4.setBalance(6);
         user4.setPassword("filipa1234");
         user4.setOrder(order1);
@@ -111,7 +111,7 @@ public class ClubDB {
         loginObj4.setPassword("filipa1234");
 
         vipUser1.setId(5);
-        vipUser1.setName("Luis");
+        vipUser1.setUsername("Luis");
         vipUser1.setBalance(500);
         vipUser1.setPassword("luis1234");
         vipUser1.setOrder(order2);
@@ -120,7 +120,7 @@ public class ClubDB {
         loginObj5.setPassword("luis1234");
 
         vipUser2.setId(6);
-        vipUser2.setName("Francisco");
+        vipUser2.setUsername("Francisco");
         vipUser2.setBalance(899);
         vipUser2.setPassword("francisco1234");
         vipUser2.setOrder(order3);
